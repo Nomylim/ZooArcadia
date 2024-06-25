@@ -19,7 +19,7 @@ footer.footer{
 
 p{
     font-family: $font-family-serif;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .hero-scene{
@@ -48,4 +48,16 @@ p{
         justify-content: center;
         color: white;
     }
+}
+
+.text-justify{
+    text-align: justify;
+}
+h2,h1{
+    font-family: $font-family-title;
+    font-weight: bold;
+}
+
+a{
+    font-family: $font-family-sans-serif;
 }

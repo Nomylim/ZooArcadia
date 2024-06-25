@@ -6,11 +6,12 @@ $primary: #77ACF2;
 $secondary: #8DC3F2; 
 $dark: #8C594D;
 $light: #BF9D7E;
-$yellow: #FAD720;
-$green: #748C4F;
+$info: #FAD720;
+$success: #748C4F;
 
 $font-family-sans-serif: "Open Sans", sans-serif !default;
 $font-family-serif: "Muli", serif !default;
+$font-family-title: "Lora", serif  !default; 
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
