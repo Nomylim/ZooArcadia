@@ -12024,4 +12024,20 @@ h2, .h2, h1, .h1 {
 
 a {
   font-family: "Open Sans", sans-serif;
+}
+
+.cadremodal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lion {
+  flex: 1 1 auto;
+}
+
+ul {
+  font-family: "Muli", serif;
+  list-style: none;
 }/*# sourceMappingURL=main.css.map */
