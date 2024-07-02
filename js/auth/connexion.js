@@ -2,23 +2,21 @@
 
 const InputMail = document.getElementById("MailInput");
 const InputPassword = document.getElementById("PasswordInput");
+const btnConnex = document.getElementById("btnconnexion");
 
-InputMail.addEventListener("keyup", validateForm);
-InputPassword.addEventListener("keyup", validateForm);
+btnConnex.addEventListener("click", checkCredentials);
 
+function checkCredentials(){
+    // Ici il faudra appeler l'API pour vérifier les credentials en BDD
+    if(InputMail.value == "mail@mail.com" && InputPassword.value == "123"){
+        const token = "fismgri";
+        setToken(token);
 
-function validateForm(){
-    validateRequired(InputMail);
-    validateRequired(InputPassword);
-}
-
-function validateRequired(input){
-    if(input.value != ''){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
+        setCookie(RoleCookieName, "veto", 7);
+        window.location.replace("/");
     }
     else{
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
+        InputMail.classList.add("is-invalid");
+        InputPassword.classList.add("is-invalid");
     }
 }

@@ -1,4 +1,4 @@
-@import url("node_modules/bootstrap-icons/font/bootstrap-icons.css");
+//@import url("node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import 'custom';
 
 html{
@@ -77,4 +77,8 @@ a{
 ul{
     font-family: $font-family-serif;
     list-style: none;
+
+    a{
+        font-family:$font-family-serif ;
+    }
 }
