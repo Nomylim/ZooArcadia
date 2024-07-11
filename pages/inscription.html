@@ -4,14 +4,14 @@
 	</div>
 </div>
 
-<form class="p-4">
+<form class="p-4" id="formulaireInscription">
     <div class="mb-3">
       <label for="MailInput" class="form-label">Mail</label>
-      <input type="email" class="form-control" id="MailInput">
+      <input type="email" class="form-control" id="MailInput" name="email">
     </div>
     <div class="mb-3">
       <label for="PasswordInput" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control" id="PasswordInput">
+      <input type="password" class="form-control" id="PasswordInput" name="password">
       <div class="invalid-feedback">Le mot de passe n'est pas assez robuste : Au moins 8 caractère, comprenant une majuscule, une minuscule, un chiffre et un caractère spécial</div>
       <div class="valid-feedback">Le mot de passe est assez robuste</div>
     </div>
@@ -19,10 +19,11 @@
         <label for="ConfirmPasswordInput" class="form-label">Confirmer mot de passe</label>
         <input type="password" class="form-control" id="ConfirmPasswordInput">
       </div>
-    <select class="form-select" aria-label="Default select example" id="select" value="3" required>
+    <select class="form-select" aria-label="Default select example" id="select" value="3" name="roles" required>
         <option selected disabled value="">Choisir le statut du compte</option>
-        <option value="1">Vétérinaire</option>
-        <option value="2">Employé</option>
+        <option value="veto">Vétérinaire</option>
+        <option value="employ">Employé</option>
     </select>
-    <button type="submit" id="btn-validation-inscription" class="btn btn-primary mt-4">Submit</button>
+    <div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+    <button type="button" id="btn-validation-inscription" class="btn btn-primary mt-4">Submit</button>
   </form>

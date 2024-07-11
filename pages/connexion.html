@@ -6,16 +6,16 @@
 
 <div class="container p-4">
     <p class="text-center"><strong>Seul les vétérinaires et les employés peuvent ce connecter.</strong></p>
-    <form>
+    <form id="connexionForm">
         <div class="mb-3">
           <label for="MailInput" class="form-label">Mail</label>
-          <input type="email" class="form-control" id="MailInput" name="Mail">
+          <input type="email" class="form-control" id="MailInput" name="username">
           <div class="invalid-feedback">Le mail et le mot de passe ne correspondent pas</div>
         </div>
         <div class="mb-3">
           <label for="PasswordInput" class="form-label">Mot de Passe</label>
-          <input type="password" class="form-control" id="PasswordInput">
+          <input type="password" class="form-control" id="PasswordInput" name="password">
         </div>
-        <button type="submit" class="btn btn-primary" id="btnconnexion">Envoyer</button>
+        <button type="button" class="btn btn-primary" id="btnconnexion">Envoyer</button>
       </form>
 </div>

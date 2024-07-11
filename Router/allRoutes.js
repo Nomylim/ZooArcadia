@@ -8,7 +8,7 @@ export const allRoutes = [
     new Route("/connexion", "Connexion", "/pages/connexion.html",[],"/js/auth/connexion.js"),
     new Route("/avis", "Avis", "/pages/avis.html",[]),
     new Route("/contact", "Contact", "/pages/contact.html",[]),
-    new Route("/inscription","Inscription","/pages/inscription.html",["admin"],"/js/auth/inscription.js"),
+    new Route("/inscription","Inscription","/pages/inscription.html",[],"/js/auth/inscription.js"), //ajouter blocage pour admin
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
