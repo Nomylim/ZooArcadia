@@ -4,7 +4,7 @@ const InputPassword = document.getElementById("PasswordInput");
 const btnConnex = document.getElementById("btnconnexion");
 const ConnexForm = document.getElementById("connexionForm");
 
-btnConnex.addEventListener("click", checkCredentials());
+btnConnex.addEventListener("click", checkCredentials);
 
 function checkCredentials() {
 
@@ -25,20 +25,6 @@ function checkCredentials() {
         redirect: "follow"
     };
 
-    fetch("https://127.0.0.1:8000/api/login", requestOptions)
-        .then((response) => {
-            debugger;
-            response.text()
-        })
-        .then((result) => {
-            console.log(result);
-            const token = result.apiToken;
-            setToken(token);
-            setCookie(RoleCookieName, result.roles[0], 7);
-        })
-        .catch((error) => console.error(error));
-
-    /*
     fetch(apiUrl+"login", requestOptions)
         .then((response) => {
             console.log("Response status: ", response.status);
@@ -63,5 +49,5 @@ function checkCredentials() {
         .catch((error) => {
             console.log("Error: ", error);
             alert(error.message);
-        });*/
+        });
 }
