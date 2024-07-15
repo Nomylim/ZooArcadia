@@ -1,5 +1,4 @@
 //@import url("node_modules/bootstrap-icons/font/bootstrap-icons.css");
-@import 'custom';
 
 html{
     position: relative;
@@ -109,4 +108,9 @@ ul{
 .service p {
     font-size: 1em;
     margin: 0;
+}
+
+#table{
+    padding: 2em;
+    width: 100%;
 }
