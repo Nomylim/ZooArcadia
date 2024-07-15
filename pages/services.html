@@ -7,11 +7,12 @@
 <section>
     <p class="text-center p-4">Découvrez tous les services disponibles au sein de notre parc Zoologique</p>
     <article class="bg-light">
+        <div id="servicesContainer"></div>
         <div class="container p-4">
-            <h2 class="text-center">Le petit train</h2>
+            <h2 class="text-center" id="titre">Test</h2>
             <div class="row row-cols-2 align-items-center p-2">
                 <div class="col">
-                    <p class="text-justify">
+                    <p class="text-justify" id="description">
                         Faite le tour de notre parc en famille à l'aide de notre petit train. Vous découvrirez tous les habitats et leurs histoires. 
                     </p>
                 </div>
@@ -26,12 +27,12 @@
             <h2 class="text-center">La visite guidée</h2>
             <div class="row row-cols-2 align-items-center p-2">
                 <div class="col">
+                    <img class="w-100 rounded" src="../images/guide.jpg" alt="gudie">
+                </div>
+                <div class="col">
                     <p class="text-justify">
                         Accompagnée de nos soigneurs venez découvrir toutes les habitudes de nos pensionnaires. 
                     </p>
-                </div>
-                <div class="col">
-                    <img class="w-100 rounded" src="../images/guide.jpg" alt="gudie">
                 </div>
             </div>
         </div>
@@ -55,6 +56,21 @@
         <h2>Une question ?</h2>
         <a class="btn btn-info" href="/contact">Contactez-nous</a>
     </article>
+
+    <form id="servicesForm" action="/api/services" method="POST" enctype="multipart/form-data" class="m-4" onsubmit="event.preventDefault(); submitService();">
+        <div class="mb-3">
+            <label for="TitreInput" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="TitreInput" name="nom">
+          </div>
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <input type="text" class="form-control" id="descriptionInput" name="description">
+          </div>
+          <div class="mb-3">
+            <input type="file" class="form-control-file" aria-label="file example" name="image" required>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnservices">Envoyer</button>
+    </form>    
 </section>
 
 

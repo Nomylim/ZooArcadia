@@ -12042,4 +12042,33 @@ ul {
 }
 ul a {
   font-family: "Muli", serif;
+}
+
+#servicesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #BF9D7E;
+  padding: 20px;
+  width: 100%;
+}
+
+.service h2, .service .h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: black;
+}
+
+.service p {
+  font-size: 1em;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */

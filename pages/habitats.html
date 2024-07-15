@@ -11,31 +11,9 @@
 				Notre savane ce composte de nombreux habitants, dont le rois des animaux et ses congénères. Mais également de plus petits animaux.
 			</p>
 		</div>
-		<div class="row row-cols-2 align-items-center p-3">
+		<div class="align-items-center p-3">
 			<div class="col text-center">
 				<img class="w-100 rounded" src="../images/enclos-savane.jpg" alt="enclos savane" type="button" data-bs-toggle="modal" data-bs-target="#SavaneModal">
-			</div>
-			<div class="col">
-				<p>Les animaux présents dans l'habitat de la savane :
-				</p>
-				<ul>
-					<div data-bs-toggle="modal" data-bs-target="#LionModal" class="p-2">
-						<li>
-							<i class="bi bi-arrow-right-circle-fill"></i>Marcel le lion</li>
-					</div>
-					<div data-bs-toggle="modal" data-bs-target="#GirafeModal" class="p-2">
-						<li>
-							<i class="bi bi-arrow-right-circle-fill"></i>Savannah la girafe</li>
-					</div>
-					<div data-bs-toggle="modal" data-bs-target="#ElephantModal" class="p-2">
-						<li>
-							<i class="bi bi-arrow-right-circle-fill"></i>Dumbo et Bumbui les éléphants</li>
-					</div>
-					<div data-bs-toggle="modal" data-bs-target="#GnousModal" class="p-2">
-						<li>
-							<i class="bi bi-arrow-right-circle-fill"></i>Gustave, Nala, Hector et Moka le troupeau de gnous</li>
-					</div>
-				</ul>
 			</div>
 		</div>
 	</article>
@@ -66,104 +44,55 @@
 	</article>
 </section>
 
-<div class="modal" id="LionModal" tabindex="-1" aria-labelledby="LionModalLabel" aria-hidden="true">
+<div class="modal" id="SavaneModal" tabindex="-1" aria-labelledby="SavaneModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bg-dark">
-				<h5 class="LionModal">Marcel le Lion</h5>
+				<h5 class="SavaneModal">Les annimaux de la savane</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body bg-light">
-                <h3>Description de l'animal :</h3>
+				<h3>Marcel le lion :</h3>
 				<div class="row row-cols-2 align-items-center cadremodal">
 					<div class="col-2 lion">
 						<img src="../images/lion.jpg" alt="lion" class="w-100 rounded">
 					</div>
 					<div class="col-2 lion">
-						<p class="text-justify">
-							Le lion (Panthera leo), surnommé "roi de la savane", est un majestueux prédateur africain reconnaissable à la crinière imposante des mâles. Vivant en groupes appelés "troupes", les lions sont des félins sociaux où les lionnes chassent en coordination tandis que les mâles protègent le territoire. Principalement présents en Afrique subsaharienne, ils sont vulnérables à cause de la perte d'habitat et des conflits avec les humains.</p>
+						<h5>Avis du vétérinaire</h5>
+						<p>Marcel ce porte très bien, il mange correctement et fait beaucoup de sieste</p>
 					</div>
 				</div>
-				<h3>Avis du vétérinaire</h3>
-				<p>Marcel ce porte très bien, il mange correctement et fait beaucoup de sieste</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="GirafeModal" tabindex="-1" aria-labelledby="GirafeModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bg-dark">
-				<h5 class="GirafeModal">Savannah la girafe</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body bg-light">
-				<h3>Description de l'animal</h3>
+				<h3>Savannah la girafe</h3>
 				<div class="row row-cols-2 align-items-center cadremodal pb-4">
 					<div class="col-2 lion">
 						<img src="../images/Giraffe_savannah.jpg" alt="girafe" class="w-100 rounded">
 					</div>
 					<div class="col-2 lion">
-						<p class="text-justify">
-							La girafe (Giraffa camelopardalis) est le plus grand animal terrestre, atteignant jusqu'à 6 mètres de hauteur. Son long cou lui permet de se nourrir des feuilles des arbres hauts. Avec son pelage unique tacheté et ses mouvements gracieux, la girafe est une figure emblématique des savanes africaines et très appréciée dans les zoos.
-						</p>
+						<h5>Avis du vétérinaire</h5>
+						<p>Savannah va bien, elle mange bien et fait beaucoup d'exercice</p>
 					</div>
 				</div>
-				<h3>Avis du vétérinaire</h3>
-				<p>Savannah va bien, elle mange bien et fait beaucoup d'exercice</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="ElephantModal" tabindex="-1" aria-labelledby="ElephantModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bg-dark">
-				<h5 class="ElephantModal">Dumbo l'éléphant</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body bg-light">
-				<h3>Description de l'animal</h3>
-				<div class="row row-cols-2 align-items-center cadremodal">
+				<h3>Dumbo l'éléphant</h3>
+				<div class="row row-cols-2 align-items-center cadremodal pb-4">
 					<div class="col-2 lion">
 						<img src="../images/elephant.jpg" alt="éléphant" class="w-100 rounded">
 					</div>
 					<div class="col-2 lion">
-						<p class="text-justify">
-							L'éléphant d'Afrique (Loxodonta africana) est le plus grand mammifère terrestre, avec de grandes oreilles et une longue trompe. Pesant jusqu'à 6 tonnes, il vit en troupeaux dirigés par des femelles et parcourt les savanes pour se nourrir. Essentiel à l'écosystème, il est menacé par le braconnage.</p>
+						<h5>Avis du vétérinaire</h5>
+						<p>Dumbo ce porte bien, il prends beaucoup de bain et mange a sa faim</p>
+					</div>
+				</div>	
+				<h3>La famille de gnous</h3>
+				<div class="row row-cols-2 align-items-center cadremodal pb-4">
+					<div class="col-2 lion">
+						<img src="../images/gnous.jpg" alt="gnous" class="w-100 rounded">
+					</div>
+					<div class="col-2 lion">
+						<h5>Avis du vétérinaire</h5>
+						<p>Toute la famille va bien, ils s'amusent et se nourrissent bien.</p>
 					</div>
 				</div>
-				<h3>Avis du vétérinaire</h3>
-				<p>Dumbo ce porte bien, il prends beaucoup de bain et mange a sa faim</p>
 			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="GnousModal" tabindex="-1" aria-labelledby="GnousModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bg-dark">
-				<h5 class="GnousModal">La famille de gnous</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-            <div class="modal-body bg-light">
-			<div class="row row-cols-2 align-items-center cadremodal">
-				<div class="col-2 lion">
-					<img src="../images/gnous.jpg" alt="gnous" class="w-100 rounded">
-				</div>
-				<div class="col-2 lion">
-					<p class="text-justify">
-						Le gnou, aussi appelé Connochaetes, est un antilope robuste vivant principalement dans les plaines ouvertes de l'Afrique. Reconnaissable par sa silhouette trapue et ses cornes courbées vers l'avant, il forme souvent de grands troupeaux migrateurs. Les gnous jouent un rôle crucial dans l'écosystème en tant que proies pour les prédateurs comme les lions et les hyènes.</p>
-				</div>
-			</div>
-            <h3>Avis du vétérinaire</h3>
-            <p>
-                Toute la famille va bien, ils s'amusent et se nourrissent bien.
-            </p>
-        </div>
 		</div>
 	</div>
 </div>
