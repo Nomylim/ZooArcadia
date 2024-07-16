@@ -97,87 +97,11 @@ function EnregistrerNourriture(){
     })
     .then((result) => {
         alert("Bravo, consommation ajouté !");
+        location.reload();
     })
     .catch((error) => {
         alert(error.message);
     })
 }
 
-//Formualire de rapports vétérinaires
-const InputAnimal2 = document.getElementById('AnimalInput2');
-const InputNourriture2 = document.getElementById('NourritureInput2');
-const InputGrammage2 = document.getElementById('GrammageInput2');
-const InputDate2 = document.getElementById('DateInput2');
-const InputEtat = document.getElementById('EtatInput'); 
-const InputDescription = document.getElementById('DescriptionInput');
-const btnRapport = document.getElementById('btnRapport');
-const formRapport = document.getElementById('formulaireRapport');
 
-btnRapport.addEventListener("click", EnregistrerRapport);
-
-InputGrammage2.addEventListener("input", validateFormRapport);
-InputNourriture2.addEventListener("imput", validateFormRapport);
-InputDate2.addEventListener("input", validateFormRapport);
-InputEtat.addEventListener("input", validateFormRapport);
-InputAnimal2.addEventListener("change", validateFormRapport);
-InputDescription.addEventListener("input", validateFormRapport);
-
-
-function validateFormRapport(){
-
-    const animalOk = validateRequired(InputAnimal2);
-    const grammageOk = validateGrammage(InputGrammage2);
-    const nourritureOk = validateRequired(InputNourriture2);
-    const dateOk = validateRequired(InputDate2);
-    const etatOk = validateRequired(InputEtat);
-
-    console.log(`Animal: ${animalOk}, Grammage: ${grammageOk}, Nourriture: ${nourritureOk}, Date: ${dateOk}, Etat: ${etatOk}`);
-
-    if(grammageOk && nourritureOk && dateOk && etatOk && animalOk){
-        btnRapport.disabled = false;
-        errorMessage.style.display = 'none';
-    }
-    else{
-        btnRapport.disabled = true;
-        errorMessage.style.display = 'block';
-    }
-}
-
-function EnregistrerRapport(){
-    let dataForm = new FormData(formRapport);
-
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    const raw = JSON.stringify({
-        "nourriture": dataForm.get("nom"),
-        "grammage": dataForm.get("grammage"),
-        "date": dataForm.get("date"),
-        "etatanimal": dataForm.get("etat"),
-        "description": dataForm.get("description"),
-        "animal_id": dataForm.get("animal"),
-    })
-
-    const requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow"
-    };
-
-    fetch(apiUrl+"rapportveterinaires", requestOptions)
-    .then((response) => {
-        if(response.ok){
-            return response.json();
-        }
-        else {
-            throw new Error("Erreur lors de la création du rapport vétérinaire");
-        }
-    })
-    .then((result) => {
-        alert("Bravo, rapport vétérinaire ajouté !");
-    })
-    .catch((error) => {
-        alert(error.message);
-    })
-}

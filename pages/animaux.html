@@ -34,37 +34,4 @@
 	<button type="button" id="btnNourriture" class="btn btn-primary mt-4" disabled>Envoyer</button>
 </form>
 
-<h2 class="text-center mt-2">Formulaire de rapports vétérianires </h2>
-<!-- Un formulaire pour les vétérinaires pour qu'ils puissent ajouter un rapport vétérinaire pour un animal doné-->
-<form class="p-4 " action="" id="formulaireRapport">
-	<select class="my-4" name="animal" id="AnimalInput2" aria-label="Default select example" required>
-		<option value="">Choisir l'animal</option>
-		<option value="23">Test</option>
-		<option value="test2">Test2</option>
-
-	</select>
-	<div class="mb-3">
-		<label for="NourritureInput2" class="form-label">Nourriture</label>
-		<input type="text" class="form-control" id="NourritureInput2" name="nom" required>
-	</div>
-	<div class="mb-3">
-		<label for="GrammageInput2" class="form-label">Grammage</label>
-		<input type="text" class="form-control" id="GrammageInput2" name="grammage" required>
-		<div class="invalid-feedback">Le grammage doit être une valeur entière supérieure à zéro.</div>
-	</div>
-	<div class="mb-3">
-		<label for="DateInput2" class="form-label" >Date</label>
-		<input type="date" class="form-control" id="DateInput2" name="date" required>
-	</div>
-	<div class="mb-3">
-		<label for="EtatInput" class="form-label" >Etat de l'animal</label>
-		<input type="text" class="form-control" id="EtatInput" name="etat" required>
-	</div>
-	<div class="mb-3">
-		<label for="DescriptionInput" class="form-label" >Description de l'animal</label>
-		<input type="text" class="form-control" id="DescriptionInput" name="etat">
-	</div>
-    <div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
-	<button type="button" id="btnRapport" class="btn btn-primary mt-4" disabled>Envoyer</button>
-</form>
 
