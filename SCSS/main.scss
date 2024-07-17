@@ -1,30 +1,31 @@
 //@import url("node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import '_custom';
 
-html{
+html {
     position: relative;
     min-height: 100%;
 }
 
-main{
-    margin-bottom: 250px;
+main {
+    margin-bottom: 200px;
 }
 
-footer.footer{
+footer.footer {
     padding: 15px;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
-p{
+p {
     font-family: $font-family-serif;
     font-size: 16px;
 }
 
-.hero-scene{
+.hero-scene {
     position: relative;
-    &::before{
+
+    &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -34,13 +35,14 @@ p{
         background-image: url(../images/giraffes.jpg);
         background-size: cover;
         filter: brightness(0.5);
-        
+
     }
-    *{
+
+    * {
         position: relative;
     }
 
-    .hero-scene-content{
+    .hero-scene-content {
         height: 300px;
         display: flex;
         flex-direction: column;
@@ -50,24 +52,26 @@ p{
     }
 }
 
-.text-justify{
+.text-justify {
     text-align: justify;
 }
-h2,h1{
+
+h2,
+h1 {
     font-family: $font-family-title;
     font-weight: bold;
 }
 
-h3{
+h3 {
     font-family: $font-family-title;
     font-size: 20px;
 }
 
-a{
+a {
     font-family: $font-family-sans-serif;
 }
 
-.cadremodal{
+.cadremodal {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -75,16 +79,16 @@ a{
 
 }
 
-.lion{
+.lion {
     flex: 1 1 auto;
 }
 
-ul{
+ul {
     font-family: $font-family-serif;
     list-style: none;
 
-    a{
-        font-family:$font-family-serif ;
+    a {
+        font-family: $font-family-serif ;
     }
 }
 
@@ -105,6 +109,7 @@ ul{
     padding: 20px;
     width: 100%;
 }
+
 .service h2 {
     font-size: 1.5em;
     margin: 0 0 10px;
@@ -116,7 +121,43 @@ ul{
     margin: 0;
 }
 
-#table{
+#table {
     padding: 2em;
     width: 100%;
+}
+
+.AvisCarousel {
+    position: relative;
+    text-align: start;
+}
+
+.AvisCarousel .carousel-control-prev-icon,
+.AvisCarousel .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.AvisCarousel .carousel-control-prev,
+.AvisCarousel .carousel-control-next {
+    width: 30%;
+}
+
+.cardAvis {
+    -webkit-box-shadow: 0px 0px 27px 7px rgba(119, 172, 242, 0.62);
+    -moz-box-shadow: 0px 0px 27px 7px rgba(119, 172, 242, 0.62);
+    box-shadow: 0px 0px 27px 7px rgba(119, 172, 242, 0.62);
+    border-radius: 5px;
+}
+
+.card-title {
+    background-color: $primary;
+    padding: 1rem;
+    border-radius: 5px 5px 0 0;
+    font-family: $font-family-serif;
+}
+
+.card-text {
+    padding: 1rem;
+    margin-bottom: 15px;
+    font-family: $font-family-serif;
 }
