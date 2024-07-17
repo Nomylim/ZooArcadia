@@ -7,7 +7,7 @@ export const allRoutes = [
     new Route("/habitats", "Habitats", "/pages/habitats.html",[]),
     new Route("/connexion", "Connexion", "/pages/connexion.html",[],"/js/auth/connexion.js"),
     new Route("/avis", "Avis", "/pages/avis.html",[]),
-    new Route("/contact", "Contact", "/pages/contact.html",[]),
+    new Route("/contact", "Contact", "/pages/contact.html",[],"js/contact.js"),
     new Route("/inscription","Inscription","/pages/inscription.html",[],"/js/auth/inscription.js"), //ajouter blocage pour admin
     new Route("/animaux", "Animaux", "/pages/animaux.html", [], "js/animaux.js"),
     new Route("/rapportVeto", "Rapports Vétérinaires", "/pages/rapportVeto.html",[],"/js/rapportVeto.js"), //ajouter blocage admin

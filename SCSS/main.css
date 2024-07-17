@@ -12021,6 +12021,11 @@ h2, .h2, h1, .h1 {
   font-weight: bold;
 }
 
+h3, .h3 {
+  font-family: "Lora", serif;
+  font-size: 20px;
+}
+
 a {
   font-family: "Open Sans", sans-serif;
 }
@@ -12071,4 +12076,9 @@ ul a {
 .service p {
   font-size: 1em;
   margin: 0;
+}
+
+#table {
+  padding: 2em;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

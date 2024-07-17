@@ -1,4 +1,5 @@
 //@import url("node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import '_custom';
 
 html{
     position: relative;
@@ -55,6 +56,11 @@ p{
 h2,h1{
     font-family: $font-family-title;
     font-weight: bold;
+}
+
+h3{
+    font-family: $font-family-title;
+    font-size: 20px;
 }
 
 a{
