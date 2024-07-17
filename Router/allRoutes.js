@@ -6,7 +6,7 @@ export const allRoutes = [
     new Route("/services", "Services", "/pages/services.html",[], "/js/services.js"),
     new Route("/habitats", "Habitats", "/pages/habitats.html",[]),
     new Route("/connexion", "Connexion", "/pages/connexion.html",[],"/js/auth/connexion.js"),
-    new Route("/avis", "Avis", "/pages/avis.html",[]),
+    new Route("/avis", "Avis", "/pages/avis.html",[], "/js/avis.js"),
     new Route("/contact", "Contact", "/pages/contact.html",[],"js/contact.js"),
     new Route("/inscription","Inscription","/pages/inscription.html",[],"/js/auth/inscription.js"), //ajouter blocage pour admin
     new Route("/animaux", "Animaux", "/pages/animaux.html", [], "js/animaux.js"),

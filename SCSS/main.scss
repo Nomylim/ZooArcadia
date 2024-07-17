@@ -161,3 +161,47 @@ ul {
     margin-bottom: 15px;
     font-family: $font-family-serif;
 }
+
+.form-control{
+    border-width: 2px;
+}
+
+.form-check-input{
+    border-width: 2px;
+    border-color: black;
+}
+
+.form-check-label{
+    font-family: $font-family-serif;
+    font-size: 20px;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.textavisavalider{
+    background-color: $primary;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+#attenteValidation p{
+    font-size: 18px;
+}
+
+.form-check{
+    display: flex;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
