@@ -20,15 +20,10 @@ fetch(apiUrl+'services_all')
         data.forEach(service => {
             const serviceElement = document.createElement('div');
             serviceElement.classList.add('service');
-
-            const serviceTitle = document.createElement('h2');
-            serviceTitle.textContent = service.nom;
-            serviceElement.appendChild(serviceTitle);
-
-            const serviceDescription = document.createElement('p');
-            serviceDescription.textContent = service.description;
-            serviceElement.appendChild(serviceDescription);
-
+            serviceElement.innerHTML = `
+            <h2>${service.nom}</h2>
+            <p>${service.description}</p>
+            `;
             servicesContainer.appendChild(serviceElement);
         });
     })

@@ -3,97 +3,55 @@
 		<h1>Les habitats</h1>
 	</div>
 </div>
-<section>
-	<article class="bg-light">
-		<div class="align-items-center px-5 pt-4">
-			<h2 type="button" data-bs-toggle="modal" data-bs-target="#SavaneModal" class="text-center">La savane</h2>
-			<p class="px-3 text-center">
-				Notre savane ce composte de nombreux habitants, dont le rois des animaux et ses congénères. Mais également de plus petits animaux.
-			</p>
-		</div>
-		<div class="align-items-center p-3">
-			<div class="col text-center">
-				<img class="w-100 rounded" src="../images/enclos-savane.jpg" alt="enclos savane" type="button" data-bs-toggle="modal" data-bs-target="#SavaneModal">
-			</div>
-		</div>
-	</article>
-	<article class="bg-secondary text-center align-items-center px-5 py-4">
-		<h2>L'Océan</h2>
-		<p class="px-3">
-			Découvrez nos aquarium avec nos magnifiques poissons exotiques. Mais également nos hippopotames et notre famille de manchots.
-		</p>
-		<img class="w-100 rounded" src="../images/poisson.jpg" alt="aquarium">
-	</article>
-	<article class="bg-success text-center align-items-center px-5 py-4 text-white">
-		<h2>La Jungle</h2>
-		<p class="px-3">
-			Venez découvrir nos chimpanzés et singes ainsi que Jean la tortue notre plus vieux pensionnaire.
-		</p>
-		<img class="w-100 rounded" src="../images/enclos-singe.jpg" alt="enclos singe">
-	</article>
-	<article class="bg-primary text-center align-items-center px-5 py-4">
-		<h2>La Voilière</h2>
-		<p class="px-3">
-			Venez découvrir nos oiseaux tropicaux et les grands oiseaux du monde.
-		</p>
-		<img class="w-100 rounded" src="../images/voilière.jpg" alt="voilière">
-	</article>
-	<article class="text-center pt-4">
-		<h2>Une question ?</h2>
-		<a class="btn btn-info" href="/contact">Contactez-nous</a>
-	</article>
+<section id="allhabitats">
+	
 </section>
 
-<div class="modal" id="SavaneModal" tabindex="-1" aria-labelledby="SavaneModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bg-dark">
-				<h5 class="SavaneModal">Les annimaux de la savane</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<section id="modals">
+	<p>Test</p>
+</section>
+
+<section class="text-center pt-4">
+	<h2>Une question ?</h2>
+	<a class="btn btn-info" href="/contact">Contactez-nous</a>
+
+</section>
+
+
+<section class=" mt-3">
+	<h2 class="text-center">Créer un nouvel habitat</h2>
+	<form id="habitaitsForm" action="" method="POST" class="mx-4">
+        <div class="mb-3">
+            <label for="NameInput" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="NameInput" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <input type="text" class="form-control" id="descriptionInput" name="description">
+          </div>
+          <!--<div class="mb-3">
+            <input type="file" class="form-control-file" aria-label="file example" name="image" accept="image/*" required>
+          </div>-->
+		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+          <button type="submit" class="btn btn-primary" id="btnHabitats" disabled>Envoyer</button>
+    </form>
+</section>
+
+<section>
+	<div class="modal" id="SupprimerModal" tabindex="-1" aria-labelledby="SupprimerModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title bg-dark">Supprimer un habitat</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body bg-light">
-				<h3>Marcel le lion :</h3>
-				<div class="row row-cols-2 align-items-center cadremodal">
-					<div class="col-2 lion">
-						<img src="../images/lion.jpg" alt="lion" class="w-100 rounded">
-					</div>
-					<div class="col-2 lion">
-						<h5>Avis du vétérinaire</h5>
-						<p>Marcel ce porte très bien, il mange correctement et fait beaucoup de sieste</p>
-					</div>
-				</div>
-				<h3>Savannah la girafe</h3>
-				<div class="row row-cols-2 align-items-center cadremodal pb-4">
-					<div class="col-2 lion">
-						<img src="../images/Giraffe_savannah.jpg" alt="girafe" class="w-100 rounded">
-					</div>
-					<div class="col-2 lion">
-						<h5>Avis du vétérinaire</h5>
-						<p>Savannah va bien, elle mange bien et fait beaucoup d'exercice</p>
-					</div>
-				</div>
-				<h3>Dumbo l'éléphant</h3>
-				<div class="row row-cols-2 align-items-center cadremodal pb-4">
-					<div class="col-2 lion">
-						<img src="../images/elephant.jpg" alt="éléphant" class="w-100 rounded">
-					</div>
-					<div class="col-2 lion">
-						<h5>Avis du vétérinaire</h5>
-						<p>Dumbo ce porte bien, il prends beaucoup de bain et mange a sa faim</p>
-					</div>
-				</div>	
-				<h3>La famille de gnous</h3>
-				<div class="row row-cols-2 align-items-center cadremodal pb-4">
-					<div class="col-2 lion">
-						<img src="../images/gnous.jpg" alt="gnous" class="w-100 rounded">
-					</div>
-					<div class="col-2 lion">
-						<h5>Avis du vétérinaire</h5>
-						<p>Toute la famille va bien, ils s'amusent et se nourrissent bien.</p>
-					</div>
-				</div>
+			  <p>Voulez-vous vraiment supprimer cet habitats, ces animaux seront également supprimés.</p>
 			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  id="confirmSupprimerModal">Supprimer</button>
+			</div>
+		  </div>
 		</div>
-	</div>
-</div>
-
+	  </div>
+</section>

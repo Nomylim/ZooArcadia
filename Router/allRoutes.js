@@ -4,7 +4,7 @@ import Route from "./Route.js";
 export const allRoutes = [
     new Route("/", "Accueil", "/pages/home.html", [], "/js/home.js"),
     new Route("/services", "Services", "/pages/services.html",[], "/js/services.js"),
-    new Route("/habitats", "Habitats", "/pages/habitats.html",[]),
+    new Route("/habitats", "Habitats", "/pages/habitats.html",[], "js/habitats.js"),
     new Route("/connexion", "Connexion", "/pages/connexion.html",[],"/js/auth/connexion.js"),
     new Route("/avis", "Avis", "/pages/avis.html",[], "/js/avis.js"),
     new Route("/contact", "Contact", "/pages/contact.html",[],"js/contact.js"),
