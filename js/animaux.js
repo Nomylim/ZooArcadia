@@ -52,18 +52,27 @@ function validateGrammage(input) {
     }
 }
 
-function validateRequired(input) {
-    if (input.value.trim() !== '') {
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    }
-    else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
+fetch(apiUrl+'animaux_all')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur réseau');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const containerAnimaux = document.getElementById('AnimalInput');
+        containerAnimaux.innerHTML ='';
+        data.forEach(animaux =>{
+            const animauxItem = document.createElement('option');
+            animauxItem.value = animaux.id;
+            animauxItem.innerHTML = animaux.prenom;
+            containerAnimaux.appendChild(animauxItem);
+        })
+    })
+    .catch(error => {
+        console.error('Il y a eu un problème avec la requête fetch:', error);
+    });
+
 
 function EnregistrerNourriture() {
     let dataForm = new FormData(formNourriture);
@@ -76,7 +85,7 @@ function EnregistrerNourriture() {
         "grammage": dataForm.get("grammage"),
         "date": dataForm.get("date"),
         "heure": dataForm.get("heure"),
-        "animal_id": dataForm.get("animal"),
+        "animal": dataForm.get("animal"),
     })
 
     const requestOptions = {
@@ -104,6 +113,8 @@ function EnregistrerNourriture() {
         })
 }
 
+
+//tabbleau des consommations de nourritures
 $(document).ready(function () {
     // Initialiser la table avec des options
     $('#table').bootstrapTable({

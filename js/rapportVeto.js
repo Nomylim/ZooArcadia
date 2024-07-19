@@ -52,19 +52,6 @@ function validateGrammage(input){
     }
 }
 
-function validateRequired(input){
-    if(input.value.trim() !== ''){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true; 
-    }
-    else{
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
-
 function EnregistrerRapport(event){
     event.preventDefault();
     let dataForm = new FormData(formRapport);

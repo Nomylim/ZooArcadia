@@ -93,3 +93,21 @@ function showAndHideElementsForRoles(){
         }
     })
 }
+
+function sanitizeHtml(text){
+    const tempHtml = document.createElement('div');
+    tempHtml.textContent = text;
+    return tempHtml.innerHTML;
+}
+function validateRequired(input){
+    if(input.value.trim() !== ''){
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true; 
+    }
+    else{
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
+    }
+}

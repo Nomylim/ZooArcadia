@@ -6,6 +6,24 @@ const ConnexForm = document.getElementById("connexionForm");
 
 btnConnex.addEventListener("click", checkCredentials);
 
+
+InputMail.addEventListener("input", validateFormConnexion);
+InputPassword.addEventListener("input", validateFormConnexion);
+
+function validateFormConnexion(){
+    const mailOk = validateRequired(InputMail);
+    const passOk = validateRequired(InputPassword);
+
+    if (mailOk && passOk) {
+        btnConnex.disabled = false;
+        errorMessage.style.display = 'none';
+    }
+    else {
+        btnConnex.disabled = true;
+        errorMessage.style.display = 'block';
+    }
+}
+
 function checkCredentials() {
 
     let dataForm = new FormData(ConnexForm);
@@ -13,9 +31,10 @@ function checkCredentials() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
+
     const raw = JSON.stringify({
-        "username": dataForm.get("username"),
-        "password": dataForm.get("password")
+        "username": sanitizeHtml(dataForm.get("username")),
+        "password": sanitizeHtml(dataForm.get("password")),
     });
 
     const requestOptions = {
@@ -27,7 +46,6 @@ function checkCredentials() {
 
     fetch(apiUrl+"login", requestOptions)
         .then((response) => {
-            console.log("Response status: ", response.status);
             if (response.ok) {
                 return response.json();
             }

@@ -25,20 +25,6 @@ function isValidEmail(input) {
     }
 }
 
-// Fonction de validation des champs requis
-function validateRequiredFields(input) {
-    if (input.value.trim() !== '') {
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    }
-    else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
-
 // Fonction pour vérifier et mettre à jour l'état du bouton
 function checkFormValidity() {
     const titreOk = validateRequiredFields(titreInput);

@@ -13,5 +13,5 @@ export default class Route {
 ["admin"] -> Réserver à l'admin
 ["veto"] -> Réserver aux véto
 ["employ"] -> Réserver aux employé
-["connecté"] -> Réservé aux utilisateurs connecté
+["connecte"] -> Réservé aux utilisateurs connecté
 */

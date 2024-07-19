@@ -17,7 +17,7 @@ fetch(apiUrl + 'habitats_all')
             habitatItem.classList.add('articlehabitats');
             habitatItem.innerHTML = `
                 <div class="align-items-center ">
-                <i class="bi bi-trash3 m-2 supprimerhabitats" data-id="${habitats.id}" id="supprimerhabitats" type="button" data-bs-toggle="modal" data-bs-target="#SupprimerModal"></i>
+                <i class="bi bi-trash3 m-2 supprimerhabitats" data-id="${habitats.id}" id="supprimerhabitats" type="button" data-bs-toggle="modal" data-bs-target="#SupprimerModal" data-show="admin"></i>
 			    <h2 class="text-center">${habitats.name}</h2>
 			    <p class="px-3 text-center">${habitats.description}</p>
 		        </div>
@@ -122,7 +122,7 @@ fetch(apiUrl + 'habitats_all')
             function validateFormHabitats() {
                 const nameOk = validateRequired(InputName);
                 const descripOk = validateRequired(InputDescript);
-
+                
                 if (nameOk && descripOk) {
                     btnHabitats.disabled = false;
                     errorMessage.style.display = 'none';
@@ -132,19 +132,6 @@ fetch(apiUrl + 'habitats_all')
                     errorMessage.style.display = 'block';
                 }
             }
-            function validateRequired(input) {
-                if (input.value.trim() !== '') {
-                    input.classList.add("is-valid");
-                    input.classList.remove("is-invalid");
-                    return true;
-                }
-                else {
-                    input.classList.remove("is-valid");
-                    input.classList.add("is-invalid");
-                    return false;
-                }
-            }
-
             function EnregistrerHabitats(event) {
                 event.preventDefault();
                 let dataForm = new FormData(habitaitsForm);

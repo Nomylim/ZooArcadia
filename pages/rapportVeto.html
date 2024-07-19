@@ -38,24 +38,26 @@
 		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
 		<button type="submit" id="btnRapport" class="btn btn-primary mt-4" disabled>Envoyer</button>
 	</form>
-	<h2 class="p-4 text-center">
-		Vous trouverez ici tous les rapports vétérinaires existants
-	</h2>
-	<div class="table-responsive px-4">
-		<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-			<thead class="thead-dark">
-				<tr>
-					<th data-field="id" data-sortable="true">ID</th>
-					<th data-field="animal" data-filter-control="input" data-sortable="true">Animal</th>
-					<th data-field="nourriture" data-sortable="true">Nourriture</th>
-					<th data-field="grammage" data-sortable="true">Grammage</th>
-					<th data-field="date" data-sortable="true">Date</th>
-					<th data-field="etatanimal" data-sortable="true">Etat animal</th>
-					<th data-field="description">Description</th>
-				</tr>
-			</thead>
-			<tbody id="container"></tbody>
-		</table>
+	<div data-show="admin">
+		<h2 class="p-4 text-center">
+			Vous trouverez ici tous les rapports vétérinaires existants
+		</h2>
+		<div class="table-responsive px-4">
+			<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+				<thead class="thead-dark">
+					<tr>
+						<th data-field="id" data-sortable="true">ID</th>
+						<th data-field="animal" data-filter-control="input" data-sortable="true">Animal</th>
+						<th data-field="nourriture" data-sortable="true">Nourriture</th>
+						<th data-field="grammage" data-sortable="true">Grammage</th>
+						<th data-field="date" data-sortable="true">Date</th>
+						<th data-field="etatanimal" data-sortable="true">Etat animal</th>
+						<th data-field="description">Description</th>
+					</tr>
+				</thead>
+				<tbody id="container"></tbody>
+			</table>
+		</div>
 	</div>
 </section>
 
