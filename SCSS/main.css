@@ -12180,4 +12180,17 @@ ul a {
   margin: 2rem;
   border: solid 2px #77ACF2;
   border-radius: 1rem;
+}
+
+.home .container {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .body {
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
 }/*# sourceMappingURL=main.css.map */

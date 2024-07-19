@@ -4,52 +4,56 @@
 	</div>
 </div>
 
-<h2 class="text-center mt-2">Formulaire d'alimentation quotidienne </h2>
-<!-- Un formulaire pour les employés pour qu'ils puissent ajouter une consommation de nourriture à un animal donné-->
-<form class="p-4 " action="" id="formulaireNourriture">
-	<select class="my-4" name="animal" id="AnimalInput" aria-label="Default select example" required>
-		<option value="">Choisir l'animal</option>
-		<option value="23">Test</option>
-		<option value="test2">Test2</option>
+<section class="body">
+	<h2 class="text-center mt-2">Formulaire d'alimentation quotidienne
+	</h2>
+	<!-- Un formulaire pour les employés pour qu'ils puissent ajouter une consommation de nourriture à un animal donné-->
+	<form class="p-4 " action="" id="formulaireNourriture">
+		<select class="my-4" name="animal" id="AnimalInput" aria-label="Default select example" required>
+			<option value="">Choisir l'animal</option>
+			<option value="23">Test</option>
+			<option value="test2">Test2</option>
 
-	</select>
-	<div class="mb-3">
-		<label for="NourritureInput" class="form-label" >Nourriture</label>
-		<input type="text" class="form-control" id="NourritureInput" name="nom" required>
-	</div>
-	<div class="mb-3">
-		<label for="GrammageInput" class="form-label">Grammage</label>
-		<input type="text" class="form-control" id="GrammageInput" name="grammage" required>
-		<div class="invalid-feedback">Le grammage doit être une valeur entière supérieure à zéro.</div>
-	</div>
-	<div class="mb-3">
-		<label for="DateInput" class="form-label" >Date</label>
-		<input type="date" class="form-control" id="DateInput" name="date" required>
-	</div>
-	<div class="mb-3">
-		<label for="HeureInput" class="form-label" >Heure</label>
-		<input type="time" class="form-control" id="HeureInput" name="heure" required>
-	</div>
-    <div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
-	<button type="button" id="btnNourriture" class="btn btn-primary mt-4" disabled>Envoyer</button>
-</form>
+		</select>
+		<div class="mb-3">
+			<label for="NourritureInput" class="form-label">Nourriture</label>
+			<input type="text" class="form-control" id="NourritureInput" name="nom" required>
+		</div>
+		<div class="mb-3">
+			<label for="GrammageInput" class="form-label">Grammage</label>
+			<input type="text" class="form-control" id="GrammageInput" name="grammage" required>
+			<div class="invalid-feedback">Le grammage doit être une valeur entière supérieure à zéro.</div>
+		</div>
+		<div class="mb-3">
+			<label for="DateInput" class="form-label">Date</label>
+			<input type="date" class="form-control" id="DateInput" name="date" required>
+		</div>
+		<div class="mb-3">
+			<label for="HeureInput" class="form-label">Heure</label>
+			<input type="time" class="form-control" id="HeureInput" name="heure" required>
+		</div>
+		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+		<button type="button" id="btnNourriture" class="btn btn-primary mt-4" disabled>Envoyer</button>
+	</form>
 
-<h2 class="p-4 text-center">
-	Vous trouverez ici tous les consommations de nourritures existants
-</h2>
-<div class="table-responsive px-4">
-	<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-		<thead class="thead-dark">
-			<tr>
-				<th data-field="id" data-sortable="true">ID</th>
-				<th data-field="animal" data-sortable="true">Animal</th>
-				<th data-field="nom" data-sortable="true">Nourriture</th>
-				<th data-field="grammage" data-sortable="true">Grammage</th>
-				<th data-field="date" data-sortable="true">Date</th>
-				<th data-field="heure" data-sortable="true">Heure</th>
-			</tr>
-		</thead>
-		<tbody id="container"></tbody>
-	</table>
-</div>
+	<h2 class="p-4 text-center">
+		Vous trouverez ici tous les consommations de nourritures existants
+	</h2>
+	<div class="table-responsive px-4">
+		<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+			<thead class="thead-dark">
+				<tr>
+					<th data-field="id" data-sortable="true">ID</th>
+					<th data-field="animal" data-sortable="true">Animal</th>
+					<th data-field="nom" data-sortable="true">Nourriture</th>
+					<th data-field="grammage" data-sortable="true">Grammage</th>
+					<th data-field="date" data-sortable="true">Date</th>
+					<th data-field="heure" data-sortable="true">Heure</th>
+				</tr>
+			</thead>
+			<tbody id="container"></tbody>
+		</table>
+	</div>
+
+</section>
 

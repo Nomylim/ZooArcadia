@@ -3,52 +3,49 @@
 		<h1>Les habitats</h1>
 	</div>
 </div>
-<section id="allhabitats">
-	
-</section>
+<section class="body">
+	<section id="allhabitats">
+		<!--Rempli par le code js-->
+	</section>
+	<section id="modals">
+		<p>Test</p>
+	</section>
+	<section class="text-center pt-4">
+		<h2>Une question ?</h2>
+		<a class="btn btn-info" href="/contact">Contactez-nous</a>
 
-<section id="modals">
-	<p>Test</p>
-</section>
-
-<section class="text-center pt-4">
-	<h2>Une question ?</h2>
-	<a class="btn btn-info" href="/contact">Contactez-nous</a>
-
-</section>
-
-
-<section class=" mt-3">
-	<h2 class="text-center">Créer un nouvel habitat</h2>
-	<form id="habitaitsForm" action="" method="POST" class="mx-4">
-        <div class="mb-3">
-            <label for="NameInput" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="NameInput" name="name">
-          </div>
-          <div class="mb-3">
-            <label for="descriptionInput" class="form-label">Description</label>
-            <input type="text" class="form-control" id="descriptionInput" name="description">
-          </div>
-		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
-          <button type="submit" class="btn btn-primary" id="btnHabitats" disabled>Envoyer</button>
-    </form>
-</section>
-
-<section>
-	<div class="modal" id="SupprimerModal" tabindex="-1" aria-labelledby="SupprimerModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-		  <div class="modal-content">
-			<div class="modal-header bg-dark">
-			  <h5 class="modal-title ">Supprimer un habitat</h5>
-			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	</section>
+	<section class=" mt-3">
+		<h2 class="text-center">Créer un nouvel habitat</h2>
+		<form id="habitaitsForm" action="" method="POST" class="mx-4">
+			<div class="mb-3">
+				<label for="NameInput" class="form-label">Nom</label>
+				<input type="text" class="form-control" id="NameInput" name="name">
 			</div>
-			<div class="modal-body bg-light">
-			  <p>Voulez-vous vraiment supprimer cet habitats, ces animaux seront également supprimés.</p>
+			<div class="mb-3">
+				<label for="descriptionInput" class="form-label">Description</label>
+				<input type="text" class="form-control" id="descriptionInput" name="description">
 			</div>
-			<div class="modal-footer bg-dark">
-			  <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  id="confirmSupprimerModal">Supprimer</button>
+			<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+			<button type="submit" class="btn btn-primary" id="btnHabitats" disabled>Envoyer</button>
+		</form>
+	</section>
+	<section>
+		<div class="modal" id="SupprimerModal" tabindex="-1" aria-labelledby="SupprimerModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-dark">
+						<h5 class="modal-title ">Supprimer un habitat</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body bg-light">
+						<p>Voulez-vous vraiment supprimer cet habitats, ces animaux seront également supprimés.</p>
+					</div>
+					<div class="modal-footer bg-dark">
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confirmSupprimerModal">Supprimer</button>
+					</div>
+				</div>
 			</div>
-		  </div>
 		</div>
-	  </div>
+	</section>
 </section>

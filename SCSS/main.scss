@@ -225,3 +225,17 @@ ul {
     border: solid 2px $primary;
     border-radius: 1rem;
 }
+
+.home .container{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px){
+    .body{
+        margin-right: 10rem;
+        margin-left: 10rem;
+    }
+    
+}

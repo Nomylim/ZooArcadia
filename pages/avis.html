@@ -3,64 +3,66 @@
 		<h1>Avis</h1>
 	</div>
 </div>
+<section class="body">
+	<div class="container p-4">
+		<h3 class="text-center">Donner votre avis sur votre expérience dans notre parc</h3>
+		<form id="formAvis">
+			<div class="mb-3">
+				<label for="PseudoInput" class="form-label">Pseudo</label>
+				<input type="text" class="form-control" id="PseudoInput" placeholder="JohnDoe" name="pseudo" required>
+			</div>
+			<div class="mb-3">
+				<label for="TextInput" class="form-label">Votre avis</label>
+				<textarea class="form-control" id="TextInput" rows="6" name="avis" required></textarea>
+			</div>
+			<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+			<button type="submit" class="btn btn-primary" id="btnAvis" disabled>Envoyer</button>
+		</form>
+		<h3 class="text-center pt-3">Votre avis sera validé par un de nos modérateur avant d'être posté sur la page d'acceuil de notre site</p>
+	</div>
 
-<div class="container p-4">
-	<h3 class="text-center">Donner votre avis sur votre expérience dans notre parc</h3>
-	<form id="formAvis">
-		<div class="mb-3">
-			<label for="PseudoInput" class="form-label">Pseudo</label>
-			<input type="text" class="form-control" id="PseudoInput" placeholder="JohnDoe" name="pseudo" required>
+	<div class="px-5">
+		<h3 class="text-center textavisavalider">Voici tous les avis à valider</h3>
+		<div
+			id="attenteValidation" class="border rounded border-primary pt-3 px-3 mb-2"><!-- Les avis seront injectés ici par le JS-->
 		</div>
-		<div class="mb-3">
-			<label for="TextInput" class="form-label">Votre avis</label>
-			<textarea class="form-control" id="TextInput" rows="6" name="avis" required></textarea>
+		<div class="text-center">
+			<button id="btnValider" data-bs-toggle="modal" data-bs-target="#ValiderModal" class="btn btn-primary">Valider</button>
+			<button id="btnSupprimer" data-bs-toggle="modal" data-bs-target="#SupprimerModal" class="btn btn-info">Supprimer</button>
 		</div>
-		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
-		<button type="submit" class="btn btn-primary" id="btnAvis" disabled>Envoyer</button>
-	</form>
-	<h3 class="text-center pt-3">Votre avis sera validé par un de nos modérateur avant d'être posté sur la page d'acceuil de notre site</p>
-</div>
+	</div>
 
-<div class="px-5">
-	<h3 class="text-center textavisavalider">Voici tous les avis à valider</h3>
-	<div id="attenteValidation" class="border rounded border-primary pt-3 px-3 mb-2">
-		<!-- Les avis seront injectés ici par le JS-->
+	<div class="modal" id="ValiderModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="ValiderModal">Valider les avis sélectionnés</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Voulez vous vraiment valider les avis sélectionnés</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="confirmValider">Valider</button>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="text-center">
-		<button id="btnValider" data-bs-toggle="modal" data-bs-target="#ValiderModal" class="btn btn-primary">Valider</button>
-		<button id="btnSupprimer" data-bs-toggle="modal" data-bs-target="#SupprimerModal" class="btn btn-info">Supprimer</button>
+	<div class="modal" id="SupprimerModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="SupprimerModal">Supprimer les avis sélectionnés</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Voulez vous vraiment supprimer les avis sélectionnés</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="confirmSupprimer">Supprimer</button>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
 
-<div class="modal" id="ValiderModal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="ValiderModal">Valider les avis sélectionnés</h5>
-		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-		  <p>Voulez vous vraiment valider les avis sélectionnés</p>
-		</div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-primary" id="confirmValider">Valider</button>
-		</div>
-	  </div>
-	</div>
-  </div>
-  <div class="modal" id="SupprimerModal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="SupprimerModal">Supprimer les avis sélectionnés</h5>
-		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-		  <p>Voulez vous vraiment supprimer les avis sélectionnés</p>
-		</div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-info" id="confirmSupprimer">Supprimer</button>
-		</div>
-	  </div>
-	</div>
-  </div>
+</section>

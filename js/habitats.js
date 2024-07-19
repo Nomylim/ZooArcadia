@@ -39,7 +39,7 @@ fetch(apiUrl + 'habitats_all')
                 <div class="modal-dialog">
 		            <div class="modal-content">
 			            <div class="modal-header bg-dark">
-				            <h5 id="${habitats.id}ModalLabel>${habitats.name}</h5>
+				            <h5 id="${habitats.id}ModalLabel  class="modal-title">${habitats.name}</h5>
 				            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			            </div>
                         <div class="modal-body bg-light">
@@ -63,8 +63,10 @@ fetch(apiUrl + 'habitats_all')
                         const modalBody = habitatModal.querySelector('.modal-body');
                         if (animaux.length > 0) {
                             modalBody.innerHTML = animaux.map(animal =>
-                                `<h3>${animal.prenom}</h3>
-                                <p>${animal.race}</p>`
+                                `<h2 >${animal.prenom}</h2>
+                                <p>${animal.race}</p>
+                                <img class="w-50 rounded mb-3" src="../images/animaux.jpg" alt="en travaux"
+                                <br>`
                             ).join('');
                         } else {
                             modalBody.innerHTML = '<p>Aucun animal trouver pour cet habitat</p>';
