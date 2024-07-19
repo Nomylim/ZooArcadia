@@ -1,11 +1,13 @@
 const formServices = document.getElementById('servicesForm');
 const btnServices = document.getElementById('btnservices');
+const InputNom = document.getElementById('TitreInput');
+const InputDescription = document.getElementById('descriptionInput');
 
 btnServices.addEventListener("click", CreerServices);
 
 
 //Affichage de tous les services depuis la BDD
-fetch(apiUrl+'services_all') 
+fetch(apiUrl + 'services_all')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur réseau');
@@ -22,7 +24,10 @@ fetch(apiUrl+'services_all')
             serviceElement.classList.add('service');
             serviceElement.innerHTML = `
             <h2>${service.nom}</h2>
+            <div class="servicecontent">
             <p>${service.description}</p>
+            <img class="w-50" rounded src="../images/logo-sans-nom.png" alt="en travaux">
+            </div>
             `;
             servicesContainer.appendChild(serviceElement);
         });
@@ -33,30 +38,28 @@ fetch(apiUrl+'services_all')
 
 //Récupération des données du formulaire de création de service
 
-function CreerServices(){
-    //Récupérer le formulaire
-    const formData = new FormData(formServices);
+function CreerServices(event) {
+    event.preventDefault();
+    const dataForm = new FormData(formServices);
 
-    //Récupérer l'image uploadé
-    const fileInput = formServices.querySelector('input[type="file"]'); 
-    if(fileInput.files.lenght > 0){
-        formData.append('file', fileInput.files[0]);
-    }
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    // Debug: Afficher les valeurs du FormData
-    for (let pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-    }
+    const raw = JSON.stringify({
+        "nom": dataForm.get("nom"),
+        "description": dataForm.get("description"),
+    })
 
     const requestOptions = {
         method: "POST",
-        body: formData,
+        headers: myHeaders,
+        body: raw,
         redirect: "follow"
     };
 
-    fetch(apiUrl+'services', requestOptions)
+    fetch(apiUrl + 'services', requestOptions)
         .then((response) => {
-            if(response.ok){
+            if (response.ok) {
                 alert('Service ajouté avec succès !');
                 return response.json();
             }
@@ -68,4 +71,33 @@ function CreerServices(){
         .catch((error) => {
             alert(error.message);
         })
+}
+
+InputNom.addEventListener("input", validateFormHabitats);
+InputDescription.addEventListener("input", validateFormHabitats);
+
+function validateFormHabitats() {
+    const nameOk = validateRequired(InputNom);
+    const descripOk = validateRequired(InputDescription);
+
+    if (nameOk && descripOk) {
+        btnServices.disabled = false;
+        errorMessage.style.display = 'none';
+    }
+    else {
+        btnServices.disabled = true;
+        errorMessage.style.display = 'block';
+    }
+}
+function validateRequired(input) {
+    if (input.value.trim() !== '') {
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
+    }
+    else {
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
+    }
 }

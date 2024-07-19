@@ -14,7 +14,7 @@ fetch(apiUrl + 'habitats_all')
 
         data.forEach(habitats => {
             const habitatItem = document.createElement('article');
-            habitatItem.classList.add('bg-light');
+            habitatItem.classList.add('articlehabitats');
             habitatItem.innerHTML = `
                 <div class="align-items-center ">
                 <i class="bi bi-trash3 m-2 supprimerhabitats" data-id="${habitats.id}" id="supprimerhabitats" type="button" data-bs-toggle="modal" data-bs-target="#SupprimerModal"></i>

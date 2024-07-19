@@ -12067,6 +12067,19 @@ ul a {
   background-color: #BF9D7E;
   padding: 20px;
   width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #8C594D;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.servicecontent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.servicecontent img {
+  border-radius: 1rem;
 }
 
 .service h2, .service .h2 {
@@ -12160,4 +12173,11 @@ ul a {
 .form-check p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.articlehabitats {
+  background-color: #8DC3F2;
+  margin: 2rem;
+  border: solid 2px #77ACF2;
+  border-radius: 1rem;
 }/*# sourceMappingURL=main.css.map */
