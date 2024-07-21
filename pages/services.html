@@ -1,0 +1,34 @@
+<div class="hero-scene text-center">
+    <div class="hero-scene-content">
+        <h1>Nos services</h1>
+    </div>
+</div>
+
+<section class="body">
+    <p class="text-center p-4">Découvrez tous les services disponibles au sein de notre parc Zoologique</p>
+    <article>
+        <div id="servicesContainer">
+            <!-- Zone remplis par le code js-->
+        </div>
+    </article>
+    <article class="text-center pt-4">
+        <h2>Une question ?</h2>
+        <a class="btn btn-info" href="/contact">Contactez-nous</a>
+    </article>
+
+    <form id="servicesForm" action="/api/services" method="POST" class="m-4" data-show="admin employ">
+        <div class="mb-3">
+            <label for="TitreInput" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="TitreInput" name="nom">
+          </div>
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <input type="text" class="form-control" id="descriptionInput" name="description">
+          </div>
+		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+          <button type="submit" class="btn btn-primary" id="btnservices" disabled>Envoyer</button>
+    </form>    
+    
+</section>
+
+

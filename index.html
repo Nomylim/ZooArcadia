@@ -3,16 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="SCSS/main.css">
+
+
+    <title>Index</title>
 </head>
 <body>
-    <header> Le menu du site Zoo Arcadia</header>
+    <header> 
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Zoo Arcadia</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/habitats">Habitats</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/avis">Avis</a>
+                  </li>
+                  <li class="nav-item" data-show="connected">
+                    <a class="nav-link" href="/animaux">Animaux</a>
+                  </li>
+                  <li class="nav-item" data-show="connected">
+                    <a class="nav-link" href="/rapportVeto">Rapports Vétérinaires</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                  </li>
+                  <li class="nav-item" data-show="admin">
+                    <a class="nav-link" href="/inscription">Inscription</a>
+                  </li>
+                  <li class="nav-item" data-show="disconnected">
+                    <a class="nav-link" href="/connexion">Connexion</a>
+                  </li>
+                  <li class="nav-item" data-show="connected">
+                    <button class="nav-link" id="deconnexion-btn">Déconnexion</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
     <main id="main-page">
         <!-- Le contenu de la page sera ici-->
     </main>
-    <footer>
-        Le footer de mon site
+    <footer class="bg-dark text-white text-center footer">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <h3 class="text-light">Nos horaires</h3>
+                <p>Du lundi au dimanche de 8h à 19h</p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>Adresse<br/>
+                    Forêt de Brocéliande<br/>
+                    35380 Bretagne<br/>
+                </p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>Contactez-nous <br/>
+                <a href="/contact">Envoyez-nous un message</a></p>
+            </div>
+        </div>
     </footer>
+    <script src="js/script.js"></script>
     <script type="module" src="Router/router.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="/node_modules/@emailjs/browser/dist/email.min.js"></script>
 </body>
 </html>

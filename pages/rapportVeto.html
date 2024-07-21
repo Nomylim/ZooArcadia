@@ -1,0 +1,60 @@
+<div class="hero-scene text-center">
+	<div class="hero-scene-content">
+		<h1>Rapports vétérinaires</h1>
+	</div>
+</div>
+<section class="body">
+	<h2 class="text-center mt-2">Formulaire de rapports vétérinaires
+	</h2>
+	<!-- Un formulaire pour les vétérinaires pour qu'ils puissent ajouter un rapport vétérinaire pour un animal doné-->
+	<form class="p-4 " action="" id="formulaireRapport">
+		<select class="my-4" name="animal" id="AnimalInput" aria-label="Default select example" required>
+			<!--Remplis avec le js-->>
+		</select>
+		<div class="mb-3">
+			<label for="NourritureInput" class="form-label">Nourriture</label>
+			<input type="text" class="form-control" id="NourritureInput" name="nom" required>
+		</div>
+		<div class="mb-3">
+			<label for="GrammageInput" class="form-label">Grammage</label>
+			<input type="text" class="form-control" id="GrammageInput" name="grammage" required>
+			<div class="invalid-feedback">Le grammage doit être une valeur entière supérieure à zéro.</div>
+		</div>
+		<div class="mb-3">
+			<label for="DateInput" class="form-label">Date</label>
+			<input type="date" class="form-control" id="DateInput" name="date" required>
+		</div>
+		<div class="mb-3">
+			<label for="EtatInput" class="form-label">Etat de l'animal</label>
+			<input type="text" class="form-control" id="EtatInput" name="etat" required>
+		</div>
+		<div class="mb-3">
+			<label for="DescriptionInput" class="form-label">Description de l'animal</label>
+			<input type="text" class="form-control" id="DescriptionInput" name="description">
+		</div>
+		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+		<button type="submit" id="btnRapport" class="btn btn-primary mt-4" disabled>Envoyer</button>
+	</form>
+	<div data-show="admin">
+		<h2 class="p-4 text-center">
+			Vous trouverez ici tous les rapports vétérinaires existants
+		</h2>
+		<div class="table-responsive px-4">
+			<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+				<thead class="thead-dark">
+					<tr>
+						<th data-field="id" data-sortable="true">ID</th>
+						<th data-field="animal" data-filter-control="input" data-sortable="true">Animal</th>
+						<th data-field="nourriture" data-sortable="true">Nourriture</th>
+						<th data-field="grammage" data-sortable="true">Grammage</th>
+						<th data-field="date" data-sortable="true">Date</th>
+						<th data-field="etatanimal" data-sortable="true">Etat animal</th>
+						<th data-field="description">Description</th>
+					</tr>
+				</thead>
+				<tbody id="container"></tbody>
+			</table>
+		</div>
+	</div>
+</section>
+
