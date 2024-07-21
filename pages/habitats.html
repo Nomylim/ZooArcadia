@@ -20,11 +20,11 @@
 		<form id="habitaitsForm" action="" method="POST" class="mx-4">
 			<div class="mb-3">
 				<label for="NameInput" class="form-label">Nom</label>
-				<input type="text" class="form-control" id="NameInput" name="name">
+				<input type="text" class="form-control" id="NameInput" name="name" required>
 			</div>
 			<div class="mb-3">
 				<label for="descriptionInput" class="form-label">Description</label>
-				<input type="text" class="form-control" id="descriptionInput" name="description">
+				<input type="text" class="form-control" id="descriptionInput" rows="6" name="description" required>
 			</div>
 			<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
 			<button type="submit" class="btn btn-primary" id="btnHabitats" disabled>Envoyer</button>

@@ -61,6 +61,7 @@ function CreerServices(event) {
         .then((response) => {
             if (response.ok) {
                 alert('Service ajouté avec succès !');
+                location.reload();
                 return response.json();
             }
             else {

@@ -23,7 +23,7 @@ function validateFormNourriture() {
     const animalOk = validateRequired(InputAnimal);
     const grammageOk = validateGrammage(InputGrammage);
     const nourritureOk = validateRequired(InputNourriture);
-    const dateOk = validateRequired(InputDate);
+    const dateOk = validateRequiredSimple(InputDate);
     const heureOk = validateRequired(InputHeure);
 
 
@@ -112,6 +112,90 @@ function EnregistrerNourriture() {
             alert(error.message);
         })
 }
+
+//enregister un nouvel animal
+const InputPrenom = document.getElementById('PrenomInput');
+const InputRace = document.getElementById('RaceInput');
+const btnAnimal = document.getElementById('btnAnimal');
+const formAnimal = document.getElementById('FormAnimal');
+
+InputPrenom.addEventListener("input", validateFormAnimal);
+InputRace.addEventListener("input", validateFormAnimal);
+
+function validateFormAnimal(){
+    const prenomOk = validateRequired(InputPrenom);
+    const raceOk = validateRequired(InputRace);
+
+    if(prenomOk && raceOk){
+        btnAnimal.disabled = false;
+        errorMessage.style.display = 'none';
+    }
+    else {
+        btnAnimal.disabled = true;
+        errorMessage.style.display = 'block';
+    }
+}
+
+fetch(apiUrl+'habitats_all')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur réseau');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const containerHabitat = document.getElementById('HabitatInput');
+        containerHabitat.innerHTML ='';
+        data.forEach(habitats =>{
+            const habitatsItem = document.createElement('option');
+            habitatsItem.value = habitats.id;
+            habitatsItem.innerHTML = habitats.name;
+            containerHabitat.appendChild(habitatsItem);
+        })
+    })
+    .catch(error => {
+        console.error('Il y a eu un problème avec la requête fetch:', error);
+    });
+
+
+function EnregistrerAnimal() {
+    let dataForm = new FormData(formAnimal);
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "prenom": dataForm.get("prenom"),
+        "race": dataForm.get("race"),
+        "habitat_id": dataForm.get("habitat"),
+    })
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    fetch(apiUrl + "animaux", requestOptions)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            else {
+                throw new Error("Erreur lors de la création de la consommation");
+            }
+        })
+        .then((result) => {
+            alert("Bravo, animal ajouté !");
+            location.reload();
+        })
+        .catch((error) => {
+            alert(error.message);
+        })
+}
+btnAnimal.addEventListener("click", EnregistrerAnimal);
+
 
 
 //tabbleau des consommations de nourritures

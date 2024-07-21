@@ -27,9 +27,9 @@ function isValidEmail(input) {
 
 // Fonction pour vérifier et mettre à jour l'état du bouton
 function checkFormValidity() {
-    const titreOk = validateRequiredFields(titreInput);
+    const titreOk = validateRequired(titreInput);
     const mailOk = isValidEmail(mailInput);
-    const textOk = validateRequiredFields(textArea);
+    const textOk = validateRequired(textArea);
 
     console.log(`Titre: ${titreOk}, Mail: ${mailOk}, texte: ${textOk}`);
 

@@ -35,7 +35,24 @@
 		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
 		<button type="button" id="btnNourriture" class="btn btn-primary mt-4" disabled>Envoyer</button>
 	</form>
-
+	<div data-show="admin">
+	<h2 class="text-center mt-2">Ajout d'un animal dans le zoo</h2>
+	<form action="" id="FormAnimal" class="p-4">
+		<select name="habitat" id="HabitatInput" required>
+			<!--Remplit par le js-->
+		</select>
+		<div class="mb-3">
+			<label for="PrenomInput" class="form-label">Prénom</label>
+			<input type="text" class="form-control" id="PrenomInput" name="prenom" required>
+		</div>
+		<div class="mb-3">
+			<label for="RaceInput" class="form-label">Race</label>
+			<input type="text" class="form-control" id="RaceInput" name="race" required>
+		</div>
+		<div id="errorMessage" class="text-danger" style="display: none;">Tous les champs doivent être remplis correctement.</div>
+		<button type="submit" id="btnAnimal" class="btn btn-primary mt-4" disabled>Envoyer</button>
+	</form>
+	</div>
 	<div data-show="admin veto">
 		<h2 class="p-4 text-center">
 			Vous trouverez ici tous les consommations de nourritures existants

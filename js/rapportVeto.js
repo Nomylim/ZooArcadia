@@ -22,7 +22,7 @@ function validateFormRapport(){
     const animalOk = validateRequired(InputAnimal);
     const grammageOk = validateGrammage(InputGrammage);
     const nourritureOk = validateRequired(InputNourriture);
-    const dateOk = validateRequired(InputDate);
+    const dateOk = validateRequiredSimple(InputDate);
     const etatOk = validateRequired(InputEtat);
 
     console.log(`Animal: ${animalOk}, Grammage: ${grammageOk}, Nourriture: ${nourritureOk}, Date: ${dateOk}, Etat: ${etatOk}`);
@@ -51,6 +51,27 @@ function validateGrammage(input){
         return false;
     }
 }
+
+fetch(apiUrl+'animaux_all')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur réseau');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const containerAnimaux = document.getElementById('AnimalInput');
+        containerAnimaux.innerHTML ='';
+        data.forEach(animaux =>{
+            const animauxItem = document.createElement('option');
+            animauxItem.value = animaux.id;
+            animauxItem.innerHTML = animaux.prenom;
+            containerAnimaux.appendChild(animauxItem);
+        })
+    })
+    .catch(error => {
+        console.error('Il y a eu un problème avec la requête fetch:', error);
+    });
 
 function EnregistrerRapport(event){
     event.preventDefault();

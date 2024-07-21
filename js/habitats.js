@@ -111,67 +111,67 @@ fetch(apiUrl + 'habitats_all')
                     }
                 })
             })
-
-            const InputName = document.getElementById('NameInput');
-            const InputDescript = document.getElementById('descriptionInput');
-            const btnHabitats = document.getElementById('btnHabitats');
-
-            InputName.addEventListener("input", validateFormHabitats);
-            InputDescript.addEventListener("input", validateFormHabitats);
-
-            function validateFormHabitats() {
-                const nameOk = validateRequired(InputName);
-                const descripOk = validateRequired(InputDescript);
-                
-                if (nameOk && descripOk) {
-                    btnHabitats.disabled = false;
-                    errorMessage.style.display = 'none';
-                }
-                else {
-                    btnHabitats.disabled = true;
-                    errorMessage.style.display = 'block';
-                }
-            }
-            function EnregistrerHabitats(event) {
-                event.preventDefault();
-                let dataForm = new FormData(habitaitsForm);
-
-                const myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-
-                const raw = JSON.stringify({
-                    "name": dataForm.get("name"),
-                    "description": dataForm.get("description"),
-                })
-
-                const requestOptions = {
-                    method: "POST",
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: "follow"
-                };
-
-                fetch(apiUrl + "habitats", requestOptions)
-                    .then((response) => {
-                        if (response.ok) {
-                            return response.json();
-                        }
-                        else {
-                            throw new Error("Erreur lors de la création de l'habitat");
-                        }
-                    })
-                    .then((result) => {
-                        alert("Bravo, habitat bien ajouté !");
-                        location.reload();
-                    })
-                    .catch((error) => {
-                        alert(error.message);
-                    })
-            }
-
-            habitaitsForm.addEventListener("submit", EnregistrerHabitats);
         })
     })
     .catch(error => {
         console.error('Il y a eu un problème avec la requête fetch:', error);
     });
+
+const InputName = document.getElementById('NameInput');
+const InputDescript = document.getElementById('descriptionInput');
+const btnHabitats = document.getElementById('btnHabitats');
+
+InputName.addEventListener("input", validateFormHabitats);
+InputDescript.addEventListener("input", validateFormHabitats);
+
+function validateFormHabitats() {
+    const nameOk = validateRequired(InputName);
+    const descripOk = validateRequired(InputDescript);
+
+    if (nameOk && descripOk) {
+        btnHabitats.disabled = false;
+        errorMessage.style.display = 'none';
+    }
+    else {
+        btnHabitats.disabled = true;
+        errorMessage.style.display = 'block';
+    }
+}
+function EnregistrerHabitats(event) {
+    event.preventDefault();
+    let dataForm = new FormData(habitaitsForm);
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "name": dataForm.get("name"),
+        "description": dataForm.get("description"),
+    })
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    fetch(apiUrl + "habitats", requestOptions)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            else {
+                throw new Error("Erreur lors de la création de l'habitat");
+            }
+        })
+        .then((result) => {
+            alert("Bravo, habitat bien ajouté !");
+            location.reload();
+        })
+        .catch((error) => {
+            alert(error.message);
+        })
+}
+
+habitaitsForm.addEventListener("submit", EnregistrerHabitats);

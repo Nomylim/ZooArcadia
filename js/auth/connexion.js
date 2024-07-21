@@ -11,8 +11,8 @@ InputMail.addEventListener("input", validateFormConnexion);
 InputPassword.addEventListener("input", validateFormConnexion);
 
 function validateFormConnexion(){
-    const mailOk = validateRequired(InputMail);
-    const passOk = validateRequired(InputPassword);
+    const mailOk = validateMail(InputMail);
+    const passOk = validateRequiredSimple(InputPassword);
 
     if (mailOk && passOk) {
         btnConnex.disabled = false;
@@ -21,6 +21,22 @@ function validateFormConnexion(){
     else {
         btnConnex.disabled = true;
         errorMessage.style.display = 'block';
+    }
+}
+
+function validateMail(input){
+    //définir le regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mailUser = input.value;
+    if(mailUser.match(emailRegex)){
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
+    }
+    else{
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
     }
 }
 
