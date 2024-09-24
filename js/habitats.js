@@ -73,17 +73,17 @@ fetch(apiUrl + 'habitats_all')
                             modalBody.innerHTML = '<p>Aucun animal trouver pour cet habitat</p>';
                         }
                         //Ajout d'un eventlistener pour gérer le click d'image et mettre à jour le compteur
-            modalBody.querySelectorAll('.animal-image').forEach(image => {
-                image.addEventListener('click', function () {
-                    const animalId = this.getAttribute('data-animal-id');
-                    const animalName = this.getAttribute('data-animal-name');
+                        modalBody.querySelectorAll('.animal-image').forEach(image => {
+                            image.addEventListener('click', function () {
+                                const animalId = this.getAttribute('data-animal-id');
+                                const animalName = this.getAttribute('data-animal-name');
 
-                    // Afficher une modale supplémentaire avec le nom de l'animal
-                    const animalModal = document.createElement('div');
-                    animalModal.classList.add('modal', 'fade');
-                    animalModal.setAttribute('tabindex', '-1');
-                    animalModal.setAttribute('aria-hidden', 'true');
-                    animalModal.innerHTML = `
+                                // Afficher une modale supplémentaire avec le nom de l'animal
+                                const animalModal = document.createElement('div');
+                                animalModal.classList.add('modal', 'fade');
+                                animalModal.setAttribute('tabindex', '-1');
+                                animalModal.setAttribute('aria-hidden', 'true');
+                                animalModal.innerHTML = `
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-success">
@@ -96,44 +96,42 @@ fetch(apiUrl + 'habitats_all')
                             </div>
                         </div>
                     `;
-                    document.body.appendChild(animalModal);
-                    // Ouvrir la nouvelle modale
-                    const modalInstance = new bootstrap.Modal(animalModal);
-                    modalInstance.show();
+                                document.body.appendChild(animalModal);
+                                // Ouvrir la nouvelle modale
+                                const modalInstance = new bootstrap.Modal(animalModal);
+                                modalInstance.show();
 
-                    //Appel de l'API pour le compteur
-                    fetch(RedisUrl + `animal/select/${animalId}`, {
-                        method: "POST",
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        if(!response.ok){
-                            throw new Error('Erreur lors de la mise à jour du compteur');
-                        }
-                        return response.json();
-                    })
-                    .then(result => {
-                        // Supposons que l'API renvoie un objet JSON avec le compteur et un message
-                        const compteur = result.count;  // Récupérer le compteur de la réponse
-                        const etat = result.etat;
-                        console.log(`Compteur mis à jour pour l'animal ID: ${animalId}, compteur: ${compteur}, etat: ${etat}`);  // Affichage de l'animalId et du compteur
-                        //Mettre à jour l'élément de la modale avec l'état de l'animal
-                        document.getElementById('etatValue').textContent = etat;
-                        })
-                    .catch(error =>{
-                        console.error('Erreur lors de la mise à jour du compteur', error);
-                    });
-                });
-            });
+                                //Appel de l'API pour le compteur
+                                fetch(RedisUrl + `animal/select/${animalId}`, {
+                                    method: "POST",
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    }
+                                })
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            throw new Error('Erreur lors de la mise à jour du compteur');
+                                        }
+                                        return response.json();
+                                    })
+                                    .then(result => {
+                                        // Supposons que l'API renvoie un objet JSON avec le compteur et un message
+                                        const compteur = result.count;  // Récupérer le compteur de la réponse
+                                        const etat = result.etat;
+                                        console.log(`Compteur mis à jour pour l'animal ID: ${animalId}, compteur: ${compteur}, etat: ${etat}`);  // Affichage de l'animalId et du compteur
+                                        //Mettre à jour l'élément de la modale avec l'état de l'animal
+                                        document.getElementById('etatValue').textContent = etat;
+                                    })
+                                    .catch(error => {
+                                        console.error('Erreur lors de la mise à jour du compteur', error);
+                                    });
+                            });
+                        });
                     })
                     .catch(error => {
                         console.error('Il y a eu un problème avec la requête fetch:', error);
                     });
             });
-
-            
 
             //Supprimer un habitat : 
             const deleteIcons = document.querySelectorAll('.supprimerhabitat');

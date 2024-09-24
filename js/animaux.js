@@ -197,17 +197,55 @@ function EnregistrerAnimal() {
 btnAnimal.addEventListener("click", EnregistrerAnimal);
 
 
-
-//tabbleau des consommations de nourritures
-$(document).ready(function () {
-    // Initialiser la table avec des options
-    $('#table').bootstrapTable({
+//tableau des vues des animaux
+$(document).ready(function(){
+    //Initialiser la table avec des options
+    $('#tableVues').bootstrapTable({
         search: true,
         filterControl: true,
         showExport: true,
         clickToSelect: true,
         sortable: true,
-        toolbar: '#toolbar'
+        toolbar: '#toolbarVues'
+    });
+
+    fetch(RedisUrl + 'animal/vues')
+        .then(response => {
+            if(!response.ok){
+                throw new Error('Erreur réseau');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data received: ', data);
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                <td>${item.animalId}</td>
+                <td>${item.prenom}</td>
+                <td>${item.count}</td>
+                `;
+                document.getElementById('containerVues').appendChild(row);
+            });
+            $('#tableVues').bootstrapTable('load', data);
+        })
+        .catch(error => {
+            console.error('Il y a eu un problème avec la requête fetch:', error);
+        });
+});
+
+
+//tabbleau des consommations de nourritures
+$(document).ready(function () {
+    // Initialiser la table avec des options
+    $('#tableNourriture').bootstrapTable({
+        search: true,
+        filterControl: true,
+        showExport: true,
+        clickToSelect: true,
+        sortable: true,
+        toolbar: '#toolbarNourriture'
     });
 
     fetch(apiUrl + 'nourriture_all')
@@ -232,9 +270,9 @@ $(document).ready(function () {
                 <td>${item.date}</td>
                 <td>${item.heure}</td>
             `;
-                document.getElementById('container').appendChild(row);
+                document.getElementById('containerNourriture').appendChild(row);
             });
-            $('#table').bootstrapTable('load', data);
+            $('#tableNourriture').bootstrapTable('load', data);
         })
         .catch(error => {
             console.error('Il y a eu un problème avec la requête fetch:', error);
