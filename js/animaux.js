@@ -256,22 +256,6 @@ $(document).ready(function () {
             return response.json();
         })
         .then(data => {
-            console.log('Data received:', data);
-            data.forEach(item => {
-
-                const row = document.createElement('tr');
-                const animalId = (item.animal && item.animal.id!==undefined)  ? item.animal.id : 'N/A';
-            
-                row.innerHTML = `
-                <td>${item.id}</td>
-                <td>${animalId}</td>
-                <td>${item.nom}</td>
-                <td>${item.grammage}</td>
-                <td>${item.date}</td>
-                <td>${item.heure}</td>
-            `;
-                document.getElementById('containerNourriture').appendChild(row);
-            });
             $('#tableNourriture').bootstrapTable('load', data);
         })
         .catch(error => {

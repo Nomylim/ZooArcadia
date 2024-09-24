@@ -66,7 +66,10 @@ fetch(apiUrl + 'habitats_all')
                             modalBody.innerHTML = animaux.map(animal =>
                                 `<h2 >${animal.prenom}</h2>
                                 <p>${animal.race}</p>
-                                <img class="w-50 rounded mb-3 animal-image" src="../images/animaux.jpg" alt="en travaux" type="button" data-animal-id="${animal.id}" data-animal-name="${animal.prenom}">
+                                <img class="w-50 rounded mb-3 animal-image" src="../images/animaux.jpg" 
+                                alt="en travaux" type="button" 
+                                data-animal-id="${animal.id}" 
+                                data-animal-name="${animal.prenom}">
                                 <br>`
                             ).join('');
                         } else {
