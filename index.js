@@ -1,9 +1,9 @@
 // Importer les modules nécessaires
-const express = require('express');
-const path = require('path');
+const express = import('express');
+const path = import('path');
 
 // Importer le fichier router.js
-const { allRoutes } = require('./Router/router.js'); 
+const { allRoutes } = import('./Router/router.js'); 
 
 // Initialiser l'application Express
 const app = express();
