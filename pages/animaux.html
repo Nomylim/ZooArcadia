@@ -53,23 +53,41 @@
 		<button type="submit" id="btnAnimal" class="btn btn-primary mt-4" disabled>Envoyer</button>
 	</form>
 	</div>
+
+	<div data-show="admin">
+		<h2 class="p-4 text-center">
+			Vous trouverez ici tous les consultations pour chaque animal
+		</h2>
+		<div class="table-responsive px-4">
+			<table id="tableVues" class="tableVues table-bordered table-striped" data-toggle="tableVues" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbartableVues">
+				<thead class="thead-dark">
+					<tr>
+						<th data-field="animalId" data-sortable="true">ID</th>
+						<th data-field="prenom" data-sortable="true">Animal</th>
+						<th data-field="count" data-sortable="true">Nombre de vues</th>
+				</thead>
+				<tbody id="containerVues"></tbody>
+			</table>
+		</div>
+	</div>
+
 	<div data-show="admin veto">
 		<h2 class="p-4 text-center">
 			Vous trouverez ici tous les consommations de nourritures existants
 		</h2>
 		<div class="table-responsive px-4">
-			<table id="table" class="table table-bordered table-striped" data-toggle="table" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+			<table id="tableNourriture" class="tableNourriture table-bordered table-striped" data-toggle="tableNourriture" data-search="true" data-filter-control="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbarNourriture">
 				<thead class="thead-dark">
 					<tr>
-						<th data-field="id" data-sortable="true">ID</th>
-						<th data-field="animal" data-sortable="true">Animal</th>
+						<th data-field="Id" data-sortable="true">ID</th>
+						<th data-field="animal_prenom" data-sortable="true">Animal</th>
 						<th data-field="nom" data-sortable="true">Nourriture</th>
 						<th data-field="grammage" data-sortable="true">Grammage</th>
 						<th data-field="date" data-sortable="true">Date</th>
 						<th data-field="heure" data-sortable="true">Heure</th>
 					</tr>
 				</thead>
-				<tbody id="container"></tbody>
+				<tbody id="containerNourriture"></tbody>
 			</table>
 		</div>
 	</div>
