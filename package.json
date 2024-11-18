@@ -4,7 +4,6 @@
   "description": "Ce site est un site vitrine pour le parc zoologique Arcadia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "keywords": [],
@@ -18,5 +17,9 @@
     "express": "^4.21.1",
     "jquery": "^3.7.1",
     "node": "^22.11.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/express": "^5.0.0"
   }
 }
