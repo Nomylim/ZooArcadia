@@ -21,6 +21,8 @@ import('express').then(expressModule => {
             const port = process.env.PORT || 3000;
 
             // Ajouter les dossiers scss et pages en tant que fichiers statiques
+            app.use('/images', express.static(path.join(__dirname, 'images')));
+            app.use('/js', express.static(path.join(__dirname, 'js')));
             app.use('/scss', express.static(path.join(__dirname, 'scss')));
             app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
