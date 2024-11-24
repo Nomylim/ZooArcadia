@@ -28,7 +28,7 @@ import('express').then(expressModule => {
             allRoutes.forEach(route => {
                 app.get(route.url, (req, res) => {
                     // Assurez-vous que la route correspond à un fichier HTML existant dans 'pages'
-                    res.sendFile(path.join(__dirname, 'pages', route.pathHtml));
+                    res.sendFile(path.join(__dirname, route.pathHtml));
                 });
             });
 
