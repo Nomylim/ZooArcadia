@@ -23,7 +23,7 @@ import('express').then(expressModule => {
             // Ajouter les dossiers scss et pages en tant que fichiers statiques
             app.use('/images', express.static(path.join(__dirname, 'images')));
             app.use('/js', express.static(path.join(__dirname, 'js')));
-            app.use('/scss', express.static(path.join(__dirname, 'scss')));
+            app.use('/SCSS', express.static(path.join(__dirname, 'scss')));
             app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
             // Fonction pour gérer les routes
