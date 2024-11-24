@@ -20,19 +20,21 @@ import('express').then(expressModule => {
             const app = express();
             const port = process.env.PORT || 3000;
 
-            // Configurer un dossier public pour les fichiers statiques
-            app.use(express.static(path.join(__dirname, 'public')));
+            // Ajouter les dossiers scss et pages en tant que fichiers statiques
+            app.use('/scss', express.static(path.join(__dirname, 'scss')));
+            app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
             // Fonction pour gérer les routes
             allRoutes.forEach(route => {
                 app.get(route.url, (req, res) => {
-                    res.sendFile(path.join(__dirname, route.pathHtml));
+                    // Assurez-vous que la route correspond à un fichier HTML existant dans 'pages'
+                    res.sendFile(path.join(__dirname, 'pages', route.pathHtml));
                 });
             });
 
             // Route pour 404
             app.use((req, res) => {
-                res.status(404).sendFile(path.join(__dirname, '/pages/404.html'));
+                res.status(404).sendFile(path.join(__dirname, 'pages', '404.html'));
             });
 
             // Démarrer le serveur
