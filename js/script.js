@@ -13,8 +13,14 @@ function getRole() {
 function signout() {
     eraseCookie(tokenCookieName);
     eraseCookie(RoleCookieName);
-    window.location.reload();
+
+    if (typeof window !== "undefined") {
+        window.location.reload(); // Recharger la page si l'environnement est un navigateur
+    } else {
+        console.warn("La fonction signout est exécutée dans un environnement où window n'est pas défini.");
+    }
 }
+
 
 function setToken(token) {
     setCookie(tokenCookieName, token, 7);
